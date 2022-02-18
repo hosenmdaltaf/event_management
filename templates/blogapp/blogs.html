@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--=================== PAGE-TITLE ===================-->
+<div class="page-title" style="background-image: url(../../static/img/news.jpg);">
+    <div class="container">
+        <h1 class="title-line-left">News</h1>
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="{% url 'homeapp:homepage' %}">Home</a></li>
+                <li>News</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--================= PAGE-TITLE END =================-->
+
+
+	<!--===================== S-NEWS =====================-->
+	<section class="s-news">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-8 blog-cover">
+
+                    {% for blog in blogs %}
+                   
+                    <div class="post-item-cover">
+                        <a href="{% url 'blogapp:blog_details' blog.pk %}">
+                        <div class="post-header">
+                            <h3 class="title title-line-left">{{blog.title}}</h3>
+                            <div class="post-thumbnail"><img src="{{blog.image.url}}" alt="img"></div>
+                            <div class="meta">
+                                <span class="post-by"><i class="fa fa-user" aria-hidden="true"></i>By <a href="#">{{blog.writer}}</a></span>
+                                <span class="post-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i><a href="#">{{blog.post_date}}</a></span>
+                               
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <div class="text">
+                                <p>{{blog.content|safe|truncatechars:200}} </p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+     
+                    {% endfor %}
+
+
+		
+				
+		
+					<div class="pagination-cover">
+						<ul class="pagination">
+							<li class="pagination-item item-prev"><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+							<li class="pagination-item active"><a href="#">1</a></li>
+							<li class="pagination-item"><a href="#">2</a></li>
+							<li class="pagination-item"><a href="#">3</a></li>
+							<li class="pagination-item"><a href="#">4</a></li>
+							<li class="pagination-item"><a href="#">5</a></li>
+							<li class="pagination-item item-next"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<!--================= SIDEBAR =================-->
+				<div class="col-12 col-lg-4 sidebar">
+					<ul class="widgets">
+					
+						<!--=========== WIDGET-RECENT-POSTS ===========-->
+						<li class="widget widget-recent-posts">
+							<h6 class="title">recent blog posts</h6>
+							<ul>
+                                {% for blog in latest_blogs %}
+                                <li>
+                                    <a href="{% url 'blogapp:blog_details' blog.pk %}">{{blog.title}}</a>
+                                    <div class="date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>{{blog.post_date}}</div>
+                                </li>
+                                {% endfor %}
+							</ul>
+						</li>
+						<!--========== WIDGET-RECENT-POSTS END ==========-->
+						<!--=========== WIDGET-INSTAGRAM ===========-->
+						<li class="widget widget-instagram">
+							<h6 class="title">Gallery</h6>
+							<ul>
+								{% for gallery in gallerys %}
+								<li>
+									<a href="{{gallery.image.url}}"><img src="{{gallery.image.url}}" alt="img"></a>
+								</li>
+								{% endfor %}
+							
+								
+							</ul>
+						</li>
+						<!--=========== WIDGET-INSTAGRAM END ===========-->
+	
+					</ul>
+				</div>
+				<!--=============== SIDEBAR END ===============-->
+			</div>
+		</div>
+	</section>
+	<!--=================== S-NEWS END ===================-->
+
+
+
+	{% endblock %}

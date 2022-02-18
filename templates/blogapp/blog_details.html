@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--=================== PAGE-TITLE ===================-->
+<div class="page-title" style="background-image: url(../../static/img/news-details.jpg);">
+    <div class="container">
+        <h1 class="title-line-left">Know more with our Blog</h1>
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="{% url 'homeapp:homepage' %}">Home</a></li>
+                <li>Creating a Wordpress Blog</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--================= PAGE-TITLE END =================-->
+
+<!--===================== S-NEWS =====================-->
+<section class="s-news s-single-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8 blog-cover">
+                <div class="post-item-cover">
+                    <div class="post-header">
+                        <div class="post-thumbnail">
+                            <img src="{{object.image.url}}" alt="img">
+                        </div>
+                        <h3 class="title title-line-left">{{object.title}}</h3>
+                        <div class="meta">
+                            <span class="post-by"><i class="fa fa-user" aria-hidden="true"></i>By <a href="#">{{object.name}}</a></span>
+                            <span class="post-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>{{object.post_date}}</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="text">
+                            <p>{{object.content|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-news-social">
+                    <span>Share this post</span>
+                    <ul>
+                        <li><a target="_blank" href="https://www.facebook.com/rovadex"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="https://twitter.com/RovadexStudio"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="reviews">
+                    <h4 class="title">Comments</h4>
+                    <ul class="reviews-list">
+                        <li class="item">
+
+                            {% if  comments  %}
+                            {% for comment in comments %}
+                            <div class="review-item">
+                                <div class="review-avatar"><img src="{% static 'user.png' %}" alt="img"></div>
+                                <div class="review-content">
+                                    <h6 class="name">User</h6>
+                                    <div class="date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>{{comment.created_date}}</div>
+                                    <p class="review-comment">{{comment.text}}</p>
+                               
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <div class="review-item">
+                                <div class="review-content">
+                                    <h6 class="name">No comment yet</h6>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                    
+
+                        </li>
+                    </ul>
+                    <div class="reviews-form">
+                        <h4 class="title">Leave a Comment</h4>
+                        <form method="POST" >
+                            {% csrf_token %}
+                            <ul class="form-cover">
+                                <!-- <li class="inp-name"><input type="text" name="your-name" placeholder="Name"></li>
+                                <li class="inp-email"><input type="email" name="your-email" placeholder="E-mail"></li> -->
+                                <li class="inp-text"><textarea name="text" placeholder="Message"></textarea></li>
+                            </ul>
+                            <div class="btn-form-cover">
+                                <button type="submit" class="btn">send comment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--================= SIDEBAR =================-->
+            <div class="col-12 col-lg-4 sidebar">
+                <ul class="widgets">
+                
+                 
+                    <!--=========== WIDGET-RECENT-POSTS ===========-->
+                    <li class="widget widget-recent-posts">
+                        <h6 class="title">recent blog posts</h6>
+                        <ul>
+                        
+                            {% for blog in latest_blogs %}
+                            <li>
+                                <a href="{% url 'blogapp:blog_details' blog.pk %}">{{blog.title}}</a>
+                                <div class="date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>{{blog.post_date}}</div>
+                            </li>
+                            {% endfor %}
+
+
+                        </ul>
+                    </li>
+                    <!--========== WIDGET-RECENT-POSTS END ==========-->
+                    <!--=========== WIDGET-INSTAGRAM ===========-->
+                    <li class="widget widget-instagram">
+                        <h6 class="title">Gallery</h6>
+                        <ul>
+                            {% for gallery in gallerys %}
+                            <li>
+                                <a href="{{gallery.image.url}}"><img src="{{gallery.image.url}}" alt="img"></a>
+                            </li>
+                            {% endfor %}
+                        
+                        </ul>
+                    </li>
+                    <!--=========== WIDGET-INSTAGRAM END ===========-->
+                
+                </ul>
+            </div>
+            <!--=============== SIDEBAR END ===============-->
+        </div>
+ 
+    </div>
+</section>
+<!--=================== S-NEWS END ===================-->
+
+
+{% endblock %}

@@ -1,0 +1,248 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+<style>
+
+
+	.carousel-item {
+		height: 450px;
+	  }
+	  
+	  .carousel-item img {
+		  /* position: absolute; 
+		  top: 0;
+		  left: 0;
+		  min-height: 450px;
+		  object-fit: contain; */
+	
+	
+		  object-fit: cover;
+		object-position: center center;
+		text-align: center;
+		width: 100%;
+		max-width: 100%;
+		height:100%;
+		transition: transform .5s;
+	  }
+	
+	
+	
+	</style>
+	
+	
+	<div class="container">
+				
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	  <div class="carousel-inner">
+	
+		<div class="carousel-item active">
+		  <img class="d-block w-100" src="../../static/img/about.jpg" alt="First slide" loading="lazy">
+		</div>
+	
+	
+	{% for slider in sliders %}
+	<div class="carousel-item">
+		<img src="{{slider.image.url}}" class="d-block w-100" alt="..." loading="lazy">
+		  <div class="carousel-caption  mb-5 ">
+		  <h2 style="color: #fff;">{{slider.header_txt}}</h2>
+		  <p  style="color: #00ffcc;" class="slide-tag">{{slider.long_txt }}.</p>
+	   
+		</div>
+	  </div>
+	
+	
+	
+	
+	  {% endfor %} 
+	
+	
+	
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	  </a>
+	</div>
+	
+	</div>
+	
+	
+
+
+
+
+
+	<!--==================== S-ABOUT ====================-->
+	<section class="s-about-home-two">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6 about-info">
+					<h2 class="title-line-left">More Than a Conference</h2>
+					<div class="about-slogan-home-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore.</div>
+					<div class="about-info-text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					</div>
+					<ul class="soc-link">
+						<li><a target="_blank" href="https://www.facebook.com/rovadex"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.instagram.com/rovadex"><i class="fab fa-instagram"></i></a></li>
+						<li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+						<li><a target="_blank" href="https://vimeo.com/"><i class="fab fa-vimeo"></i></a></li>
+					</ul>
+					<a href="{% url 'homeapp:aboutpage' %}" class="btn btn-yellow">read more</a>
+				</div>
+				<div class="col-12 col-md-6 about-img">
+					<a data-fancybox href="https://www.youtube.com/watch?v=mOdXR6otHew" poster="assets/img/new/123.jpg">
+						<img class="lazy" src="../../static/img/new/123.jpg" data-src="assets/img/new/123.jpg" alt="img">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================== S-ABOUTK END ==================-->
+
+
+    <!--=================== S-OUR-TEAM ===================-->
+	<section class="s-our-team home-our-team">
+		<div class="our-team-bg" style="background-image: url(assets/img/effect-team-1.png);"></div>
+		<div class="container">
+			<h2 class="title-line">Our Team</h2>
+			<p class="slogan">They possess the secret knowledge and interesting experience of creating a digital product.</p>
+			<div class="row team-cover">
+
+                {% for team in teams %}
+				<div class="col-12 col-sm-4 team-item">
+					<a href="#" class="team-img">
+						<img src="{{team.image.url}}" alt="team">
+					</a>
+					<h4 class="title"><a href="#">{{team.name}}</a></h4>
+					<div class="prof">{{team.job_title}}</div>
+					<ul class="soc-link">
+						<li><a target="_blank" href="{{team.facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
+
+					</ul>
+				</div>
+                {% endfor %}
+
+			
+
+			</div>
+			<a href="{% url 'homeapp:teampage' %}" class="btn">view all team</a>
+		</div>
+	</section>
+	<!--================= S-OUR-TEAM END =================-->
+
+
+
+	<!--================= S-TESTIMONIALS =================-->
+	<section class="s-testimonials testimonials-slider-cover s-title-bg">
+		<span class="title-bg">Testimonials</span>
+		<div class="container">
+			<h2 class="title-line">Testimonials</h2>
+			<p class="slogan">They possess the secret knowledge and interesting experience of creating a digital product.</p>
+			<div class="slider-testimonials">
+                
+                {% for review in reviews %}
+				<div class="slide-testimonial">
+					<div class="testimonial-item">
+						<img src="{{review.image.url}}" alt="img">
+						<span class="slide-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+						<div class="testimon-content">{{review.text}}.</div>
+						<h4 class="name">{{review.name}}</h4>
+					
+					</div>
+				</div>
+                {% endfor %}
+
+
+			</div>
+		</div>
+	</section>
+	<!--=============== S-TESTIMONIALS END ===============-->
+
+
+	<!--===================== S-PRICING =====================-->
+<section class="s-pricing">
+    <span class="title-position title-position-right">pricing</span>
+    <div class="container">
+        <h2 class="title-line">Pricing Plans</h2>
+        <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="pricing-cover">
+
+            {% for pacakge in price_pacakges %}
+            <div class="pricing-item">
+                <h4 class="pricing-header">{{pacakge.name}}</h4>
+                <div class="pricing-item-content">
+                    <div class="price pricing-slogan title-line">Tk.{{pacakge.price}}</div>
+               
+                    <div class="pricing-info">
+                        <ul class="">
+                            <li>{{pacakge.details|safe|truncatechars:100}}/li>
+            
+                        </ul>
+                    </div>
+                    <div class="pricing-slogan title-line">{{pacakge.condition}}</div>
+                    <a href="{% url 'contactapp:contact' %}" class="btn btn-yellow">Book Now</a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+<!--================== S-PRICING END ==================-->
+
+
+
+<!--================= S-SCHEDULE-EVENT =================-->
+<section class="s-schedule-event schedule-event-home-two">
+	<span class="title-position title-position-left">Program</span>
+	<div class="container">
+		<h2 class="title-line">Schedule of Event</h2>
+		<p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+		<ul class="schedule-cover">
+
+	        {% for faq in faqs %}
+			<li>
+				<div onclick="myFunction()" class="schedule-header">
+					<div class="schedule-time">{{faq.id}}</div>
+					<div class="schedule-title">{{faq.title}}</div>
+					<i class="fa fa-chevron-down" aria-hidden="true"></i>
+				</div>
+				<div id= "myDIV" class="schedule-content" style="display: none;">
+					<p>{{faq.description}}.</p>
+				</div>
+			</li>
+			{% endfor %}
+
+		</ul>
+	</div>
+</section>
+<!--=============== S-SCHEDULE-EVENT END ===============-->
+	
+<script>
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+
+</script>
+
+
+{% endblock %}

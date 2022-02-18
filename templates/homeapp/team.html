@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--=================== PAGE-TITLE ===================-->
+<div class="page-title" style="background-image: url(../../static/img/team.jpg);">
+    <div class="container">
+        <h1 class="title-line-left">Our team</h1>
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="{% url 'homeapp:homepage' %}">Home</a></li>
+                <li>Team page</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--================= PAGE-TITLE END =================-->
+
+<!--=================== S-OUR-TEAM ===================-->
+<section class="s-our-team about-team">
+    <div class="our-team-bg" style="background-image: url(assets/img/bg-team-about.svg);"></div>
+    <div class="container">
+  
+        <div class="row team-cover">
+
+            {% for team in  teams %}
+            <div class="col-6 col-sm-4 team-item">
+                <a href="#" class="team-img">
+                    <img src="{{team.image.url}}" alt="team" loading="lazy">
+                </a>
+                <h4 class="title"><a href="#">{{team.name}}</a></h4>
+                <div class="prof">{{team.job_title}}</div>
+                <ul class="soc-link">
+                    <li><a target="_blank" href="{{team.facebook_url }}"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a></li>
+                    
+                </ul>
+            </div>
+            {% endfor %}
+
+       
+        </div>
+    </div>
+</section>
+<!--================= S-OUR-TEAM END =================-->
+
+
+{% endblock%}

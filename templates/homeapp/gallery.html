@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!--=================== PAGE-TITLE ===================-->
+<div class="page-title" style="background-image: url(../../static/img/gallery.jpg);">
+    <div class="container">
+        <h1 class="title-line-left">Gallery</h1>
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="{% url 'homeapp:homepage' %}">Home</a></li>
+                <li>Gallery</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--================= PAGE-TITLE END =================-->
+
+<!--==================== S-GALLERY ====================-->
+<section class="s-gallery page-gallery">
+    <div class="container"> 
+        <div class="tab-wrap">
+
+
+
+            <ul class="tab-nav gallery-tabs">
+                <li class="item" rel="tab1"><a href="{% url 'homeapp:gallerypage' %}">All</a></li>
+                {% for cat in categories %}
+                <li class="item" rel="tab2">
+                    <a href="{% url 'homeapp:gallerypage' %}?category={{cat.name}}">
+                        {{ cat.name }}</a>
+                </li> 
+                {% endfor %} 
+                <!-- <li class="item" rel="tab3">Type 2</li> -->
+            </ul>
+  
+
+
+
+            <div class="tabs-content">
+
+                <div class="tab tab1">
+                    <div class="row-gallery"> 
+                        <div class="gallery-cover">
+
+
+                   
+                            {% for gallery in  gallerys %}
+
+                            <div class="gallery-item">
+                                <a href="{{gallery.image.url}}" data-fancybox="gallery1">
+                                    <div class="gal-open"><span>+</span></div>
+                                    <img src="{{gallery.image.url}}" alt="img" loading="lazy">
+                                    <div class="gal-item">
+                                        <h4 class="title">{{gallery.title}}</h4>
+                                        <p>{{gallery.text}}.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+
+            
+            </div>
+        </div>
+    </div>
+</section>
+<!--================== S-GALLERY END ==================-->
+
+
+{% endblock %}

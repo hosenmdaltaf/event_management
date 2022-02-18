@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!--=================== PAGE-TITLE ===================-->
+<div class="page-title" style="background-image: url(../../static/img/about.jpg);">
+    <div class="container">
+        <h1 class="title-line-left">About Us</h1>
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="{% url 'homeapp:homepage' %}">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--================= PAGE-TITLE END =================-->
+
+<!--==================== OVERVIEW ====================-->
+<section class="overview">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="overview-info">
+                    <h2 class="title-line-left">Overview</h2>
+                    <div class="overview-info-item">
+                        <h5>Experience Since 2012</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam.</p>
+                        <p>Elementum nibh tellus molestie nunc non blandit massa enim. Pretium aenean pharetra magna ac placerat vestibulum lectus.</p>
+                    </div>
+                    <div class="overview-info-item">
+                        <h5>Our Mission</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam. Elementum nibh tellus molestie nunc non blandit massa enim.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 overview-img-cover">
+                <div class="overview-img-cover">
+                    {% for gallery in gallerys %}
+                    <div class="overview-img">
+                        <img src="{{gallery.image.url}}" alt="img">
+            
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================== OVERVIEW END ==================-->
+<!--================= OUR-HISTORY END =================-->
+<section class="our-history s-title-bg">
+    <span class="title-bg">Our History</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="our-history-left">
+                    <h2 class="title-line-left">Our History</h2>
+                    <div class="overview-info-item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam.</p>
+                        <p>Elementum nibh tellus molestie nunc non blandit massa enim. Pretium aenean pharetra magna ac placerat vestibulum lectus.</p>
+                    </div>
+                    <div class="overview-info-item">
+                        <h5>Our Certificates</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim. </p>
+                    </div>
+                    <div class="history-cert">
+                        <div class="history-cert-img">
+                            <a href="assets/img/certificate-1.jpg" data-fancybox="gallery2">
+                                <img src="assets/img/certificate-1.jpg" alt="img">
+                            </a>
+                        </div>
+                        <div class="history-cert-img">
+                            <a href="assets/img/certificate-1.jpg" data-fancybox="gallery2">
+                                <img src="assets/img/certificate-1.jpg" alt="img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="history-info-cover">
+                    <div class="history-info">
+                        <h4 class="title"><span>2012-2014. </span>Our Establishment</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam. Elementum nibh tellus molestie.</p>
+                    </div>
+                    <div class="history-info">
+                        <h4 class="title"><span>2014. </span>The Early Days</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                    <div class="history-info">
+                        <h4 class="title"><span>2015-2016. </span>Prosperity of Company</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                    <div class="history-info">
+                        <h4 class="title"><span>2017-2018. </span>Worldwide Recognition</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================= OUR-HISTORY END =================-->
+
+<!--=================== S-OUR-TEAM ===================-->
+<section class="s-our-team about-team">
+    <div class="our-team-bg" style="background-image: url(assets/img/bg-team-about.svg);"></div>
+    <div class="container">
+        <h2 class="title-line">Our Team</h2>
+        <p class="slogan">They possess the secret knowledge and interesting experience of creating a digital product.</p>
+        <div class="row team-cover">
+
+            {% for team in teams %}
+            <div class="col-6 col-sm-4 team-item">
+                <a href="#" class="team-img">
+                    <img src="{{team.image.url}}" alt="team">
+                </a>
+                <h4 class="title"><a href="#">{{team.name}}</a></h4>
+                <div class="prof">{{team.job_title}}</div>
+                <ul class="soc-link">
+                    <li><a target="_blank" href="{{team.facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a></li>
+                </ul>
+            </div>
+            {% endfor %}
+        
+        </div>
+    </div>
+</section>
+<!--================= S-OUR-TEAM END =================-->
+
+<!--==================== S-COUNTER ====================-->
+<section class="s-counter counter-animate counter-active s-bg">
+    <div class="mask" style="background-image: url(assets/img/bg-effect-counter.svg);"></div>
+    <div class="container">
+        <div class="row counter-cover">
+            <div class="col-6 col-sm-3 counter-item">
+                <div class="counter-number"><span data-number="28">0</span></div>
+                <h5>speakers</h5>
+            </div>
+            <div class="col-6 col-sm-3 counter-item">
+                <div class="counter-number"><span data-number="3">0</span>k</div>
+                <h5>happy customers</h5>
+            </div>
+            <div class="col-6 col-sm-3 counter-item">
+                <div class="counter-number"><span data-number="650">0</span></div>
+                <h5>Places</h5>
+            </div>
+            <div class="col-6 col-sm-3 counter-item">
+                <div class="counter-number"><span data-number="350">0</span></div>
+                <h5>Podcasts</h5>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================== S-COUNTER END ==================-->
+
+<!--================= S-TESTIMONIALS =================-->
+<section class="s-testimonials about-testimonials-slider">
+
+    <div class="container">
+        <h2 class="title-line">What People Say About Us</h2>
+        <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="slider-testimonials">
+     
+            
+            {% for review in reviews %}
+            <div class="slide-testimonial">
+                <div class="testimonial-item">
+                    <img src="{{review.image.url}}" alt="img">
+                    <span class="slide-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+                    <div class="testimon-content">{{review.text}}.</div>
+                    <h4 class="name">{{review.name}}</h4>
+                
+                </div>
+            </div>
+            {% endfor %}
+
+         
+        </div>
+    </div>
+</section>
+<!--=============== S-TESTIMONIALS END ===============-->
+
+
+
+{% endblock %}

@@ -1,0 +1,178 @@
+/*------------------------- FONTS -------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700');
+/*font-family: $font__family;*/
+
+/*-------------------- DEFAULT STYLES --------------------*/
+body{
+	color: $secondary__color;
+	line-height:1.5;
+	font-size:16px;
+	font-family: $font__family;
+	min-width: 320px;
+	overflow-x: hidden;
+	background: #f6fdf5;
+}
+body.version-2{
+	color: $secondary__color_home_two;
+}
+b, strong{
+	font-weight:bold;
+}
+h1,h2,h3,h4,h5,h6{
+	color: $primary__color;
+	font-weight: 600;
+	line-height: 1.5em;
+	position: relative;
+}
+h1{
+	font-size: 60px;
+}
+h2{
+	font-size: 42px;
+	margin-bottom: 10px;
+}
+h3{
+	font-size: 32px;
+}
+h4{
+	font-size: 24px;
+}
+h5{
+	font-size: 18px;
+}
+h6{
+	font-size: 16px;
+}
+a,
+.title a{
+	color: $primary__color;
+	transition: .3s ease;
+	text-decoration: none;
+}
+a{
+	color: $link__color;
+}
+a,
+.title a{
+	&:hover{
+		color: $accent__color;
+	}
+}
+img{
+	max-width: 100%;
+}
+.version-2{
+	h1,h2,h3,h4,h5,h6{
+		color: $primary__color_home_two;
+	}
+	a,
+	.title a{
+		&:hover{
+			color: $accent_color_home_two;
+		}
+	}
+}
+/*------------------------ TRICKS ------------------------*/
+.title-line{
+	text-align: center;
+}
+.title-line-left,
+.title-line{
+	padding-top: 10px;
+}
+.title-line-left,
+.title-line{
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 56px;
+		height: 3px;
+		background-color: $accent__color;
+	}
+}
+.version-2{
+	.title-line-left,
+	.title-line{
+		&:before{
+			background-color: $accent_color_home_two;
+		}
+	}
+}
+.title-line:before{
+	left: 50%;
+	transform: translate(-50%,0);
+}
+.title-line-left:before{
+	left: 0;
+	transform: translate(0,0);
+}
+.slogan{
+	margin: 0 auto 50px;
+	max-width: 515px;
+	text-align: center;
+	color: $secondary__color;
+}
+
+/*---------------------- S-TITLE-BG ----------------------*/
+.s-title-bg{
+	position: relative;
+}
+.s-title-bg .container{
+	position: relative;
+	z-index: 1;
+}
+.title-bg-left,
+.title-bg{
+	white-space: nowrap;
+	position: absolute;
+	display: block;
+	top: -30px;
+	font-weight: 800;
+	font-size: 288px;
+	line-height: 1em;
+	color: #f6fdf5;
+	text-shadow: -10px -10px 24px rgba(0, 0, 0, 0.04);
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+.title-bg-left{
+	left: -64px;
+	min-width: calc(100% + 64px);
+	text-align: left;
+}
+.title-bg{
+	left: 50%;
+	transform: translate(-50%,0);
+}
+
+/*------------------------ S-BG ------------------------*/
+.s-bg{
+	position: relative;
+	overflow: hidden;
+}
+.s-bg .container{
+	position: relative;
+	z-index: 1;
+}
+.mask{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1920px;
+	height: 100%;
+	animation: levitation 30s linear 0s infinite normal;
+}
+@keyframes levitation {
+	from{
+		transform: rotate(0deg) translateX(50px) rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg) translateX(50px) rotate(-360deg);
+	}
+}

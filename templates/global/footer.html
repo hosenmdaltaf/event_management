@@ -1,0 +1,73 @@
+
+{% load static %}
+
+{% block content %}
+
+<!--===================== FOOTER =====================-->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-4"> 
+				<a href="{% url 'homeapp:homepage' %}" >
+					<img src="{% static 'img/logo1.png' %}" alt="logo" class="logo">
+					
+				</a> 
+				<div class="footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+				<ul class="soc-link">
+					<li><a target="_blank" href="https://www.facebook.com/rovadex"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a target="_blank" href="https://twitter.com/RovadexStudio"><i class="fab fa-twitter"></i></a></li>
+					<li><a target="_blank" href="https://www.instagram.com/rovadex"><i class="fab fa-instagram"></i></a></li>
+					<li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4">
+				<h6>Contacts</h6>
+				<ul class="footer-contacts">
+					<li>
+						<i class="fas fa-map-marker-alt"></i>
+						<a href="#">Uttara <br>Dhaka-1230</a>
+					</li>
+					<li>
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<a href="tel:01921-648721">01921-648721</a>
+					
+					</li>
+					<li>
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<a href="mailto:dreamloading@gmail.com">dreamloading@gmail.com</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 insta-list-cover">
+				<h6>Some of our capture </h6>
+				<ul class="insta-list">
+
+					{% for img in  footer_gallerys %}
+					<li><a target="_blank" href="{{img.image.url}}">
+						<img class="lazy" src="{{img.image.url}}" alt="social" loading="lazy"></a></li>
+					{% endfor %}
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-4"><div class="copyright">© 2022. <a target="_blank" href="https://dhakasolution.com">Dhaka Solution</a>. All Rights Reserved.</div></div>
+				<div class="col-8">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--=================== FOOTER END ===================-->
+
+<!--===================== TO TOP =====================-->
+<a class="to-top" href="#home">
+	<i class="fa fa-chevron-up" aria-hidden="true"></i>
+</a>
+<!--=================== TO TOP END ===================-->
+
+{% endblock %}
