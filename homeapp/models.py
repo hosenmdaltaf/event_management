@@ -43,7 +43,7 @@ class Gallery(models.Model):
    
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     def image_tag(self):
         if self.image != '':
@@ -58,7 +58,7 @@ class Review(models.Model):
     text=models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def image_tag(self):
         if self.image != '':
@@ -73,7 +73,7 @@ class Team(models.Model):
     instagram_url = models.URLField(max_length=500,null=True,blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def image_tag(self):
         if self.image != '':
@@ -84,4 +84,4 @@ class Faq(models.Model):
     description = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
