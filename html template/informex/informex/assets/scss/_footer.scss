@@ -1,0 +1,251 @@
+/*------------------------ FOOTER ------------------------*/
+footer{
+	background: #fff;
+	padding-top: 72px;
+}
+.logo-footer{
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 7px;
+}
+.logo-footer img{
+	margin-right: 8px;
+}
+.logo-text{
+	font-weight: 700;
+	font-size: 28px;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: #23033c;
+}
+.logo-text span{
+	transition: .3s ease;
+	color: $accent__color;
+}
+footer .soc-link li:not(:last-child) {
+	margin-right: 25px;
+}
+footer .soc-link li a{
+	color: #cbcbcb;
+}
+footer .soc-link li a:hover{
+	color: $accent__color;
+}
+.footer-text{
+	margin-bottom: 34px;
+}
+footer h6{
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	margin: 10px 0 15px;
+}
+.footer-contacts li{
+	position: relative;
+	padding-left: 35px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 28px;
+}
+.footer-contacts li:last-child{
+	margin-bottom: 0;
+}
+.footer-contacts li i{
+	font-size: 20px;
+	line-height: 34px;
+	text-align: right;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #c4c4c4;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0,-50%);
+}
+.insta-list-cover{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	h6{
+		width: 100%;
+		max-width: 342px;
+		padding-left: 7px;
+	}
+}
+.insta-list{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: -7px;
+	max-width: 342px;
+	width: 100%;
+}
+.insta-list li{
+	width: 33.33%;
+	padding: 7px;
+}
+.insta-list li a{
+	display: block;
+	position: relative;
+}
+.insta-list li a:before{
+	content: '+';
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) scale(0);
+	color: #fff;
+	z-index: 2;
+	font-weight: 500;
+	font-size: 30px;
+	transition: .3s ease;
+}
+.insta-list li a:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $accent_color_home_two;
+	z-index: 1;
+	transition: .3s ease;
+	opacity: 0;
+}
+.insta-list li a:hover:before{
+	transform: translate(-50%,-50%) scale(1);
+}
+.insta-list li a:hover:after{
+	opacity: .7;
+}
+.insta-list li a img{
+	display: block;
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+}
+.footer-bottom{
+	background: rgba(244, 246, 249, 0.4);
+	margin-top: 80px;
+	padding: 32px 0;
+}
+.footer-bottom .row{
+	align-items: center;
+}
+.footer-menu{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.footer-menu li:not(:last-child){
+	margin-right: 54px;
+}
+.footer-menu li a{
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 26px;
+	color: $primary__color;
+}
+.copyright,
+.copyright a{
+	color: $primary__color;
+}
+.footer-menu li a:hover,
+.copyright a:hover{
+	color: $accent__color;
+}
+
+/*------------------------- MEDIA -------------------------*/
+@media(max-width: 1199px){
+	.insta-list li a img{
+		height: 85px;
+	}
+	.footer-contacts li i {
+		font-size: 18px;
+		line-height: 30px;
+	}
+	.soc-link li a {
+		font-size: 18px;
+	}
+	.logo-text {
+		font-size: 24px;
+	}
+	.logo-footer img {
+		width: 30px;
+	}
+	.footer-menu li:not(:last-child) {
+		margin-right: 48px;
+	}
+	.footer-bottom {
+		margin-top: 55px;
+		padding: 20px 0;
+	}
+	footer {
+		padding-top: 60px;
+	}
+	.footer-text {
+		margin-bottom: 30px;
+	}
+	.footer-contacts li{
+		margin-bottom: 26px;
+	}
+}
+
+@media(max-width: 991px){
+	.insta-list li a img {
+		height: 65px;
+	}
+	.copyright, .copyright a{
+		font-size: 12px;
+	}
+	.footer-menu li:not(:last-child) {
+		margin-right: 24px;
+	}
+	.footer-menu li a{
+		font-size: 12px;
+	}
+}
+@media(max-width: 767px){
+	.footer-menu{
+		display: none;
+	}
+	.copyright{
+		text-align: center;
+	}
+	footer .soc-link{
+		margin-bottom: 30px;
+	}
+}
+@media(max-width: 575px){
+	.insta-list-cover{
+		justify-content: flex-start;
+		h6{
+			padding-left: 0;
+		}
+	}
+	.footer-contacts{
+		margin-bottom: 40px;
+	}
+	footer .soc-link {
+		margin-bottom: 40px;
+	}
+}

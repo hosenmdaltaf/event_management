@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1920" height="186" viewBox="0 0 1920 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="186">
+<rect width="1920" height="186" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<g opacity="0.2">
+<circle cx="122.5" cy="25.6128" r="18.5" transform="rotate(-180 122.5 25.6128)" stroke="#2CCFBB" stroke-width="6"/>
+<g filter="url(#filter0_f)">
+<circle cx="1447.5" cy="171.613" r="7.5" transform="rotate(-180 1447.5 171.613)" stroke="#D1F3CC" stroke-width="4"/>
+</g>
+<g filter="url(#filter1_f)">
+<circle cx="980.5" cy="166.613" r="5" transform="rotate(-180 980.5 166.613)" stroke="#7C77F8" stroke-width="3"/>
+</g>
+<path d="M279 148.448C271.361 135.494 254.666 131.186 241.712 138.825C228.759 146.465 224.45 163.159 232.09 176.113" stroke="#75D48B" stroke-width="12"/>
+<g filter="url(#filter2_f)">
+<path d="M1644.36 27.9159C1654.1 37.8072 1653.98 53.7251 1644.09 63.4694C1634.2 73.2137 1618.28 73.0945 1608.54 63.2031" stroke="#75D48B" stroke-width="12"/>
+</g>
+<g filter="url(#filter3_f)">
+<rect x="1335.88" y="28.9707" width="17" height="17" transform="rotate(135 1335.88 28.9707)" stroke="white" stroke-width="3"/>
+</g>
+<rect x="789.879" y="10.1841" width="9.62743" height="9.62743" transform="rotate(135 789.879 10.1841)" stroke="#1079F5" stroke-width="3"/>
+<rect x="593.879" y="150.542" width="17.6066" height="17.6066" transform="rotate(135 593.879 150.542)" stroke="white" stroke-width="3"/>
+<g filter="url(#filter4_f)">
+<rect x="1816.17" y="159.113" width="30" height="4" transform="rotate(-135 1816.17 159.113)" fill="#2CCFBB"/>
+<rect x="1819" y="137.9" width="30" height="4" transform="rotate(135 1819 137.9)" fill="#2CCFBB"/>
+</g>
+<rect width="13.7262" height="1.83015" transform="matrix(-0.707107 0.707107 0.707107 0.707107 363.706 13.1133)" fill="#47D4DD"/>
+<rect width="13.7262" height="1.83015" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 365 22.8193)" fill="#47D4DD"/>
+<rect x="82.2171" y="145.241" width="18.7175" height="2.49567" transform="rotate(-165 82.2171 145.241)" fill="#EDD573"/>
+<rect x="77.1277" y="132.896" width="18.7175" height="2.49567" transform="rotate(105 77.1277 132.896)" fill="#EDD573"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f" x="1436" y="160.113" width="23" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter1_f" x="973" y="159.113" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="0.5" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter2_f" x="1601.26" y="20.7051" width="72.2228" height="71.893" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.5" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter3_f" x="1307.72" y="12.8286" width="32.2843" height="32.2843" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter4_f" x="1790.96" y="131.071" width="32.0416" height="32.0421" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+</filter>
+</defs>
+</svg>
