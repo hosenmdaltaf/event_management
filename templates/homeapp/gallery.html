@@ -24,9 +24,10 @@
         <div class="tab-wrap">
 
 
-
             <ul class="tab-nav gallery-tabs">
-                <li class="item" rel="tab1"><a href="{% url 'homeapp:gallerypage' %}">All</a></li>
+                <li class="item active"  rel="tab1">
+                    <a href="{% url 'homeapp:gallerypage' %}">All</a>
+                </li>
                 {% for cat in categories %}
                 <li class="item" rel="tab2">
                     <a href="{% url 'homeapp:gallerypage' %}?category={{cat.name}}">
@@ -35,9 +36,8 @@
                 {% endfor %} 
                 <!-- <li class="item" rel="tab3">Type 2</li> -->
             </ul>
-  
 
-
+       
 
             <div class="tabs-content">
 
@@ -73,7 +73,13 @@
 
 
 
+<script>
+    $('.tabsBtn').on('click', '.btn', function(){
+        $('.tabsBtn .btn').removeClass('item');
+        $(this).addClass('item');
+    });
 
+</script>
 
 
 {% comment %} <div class="infinite-container">

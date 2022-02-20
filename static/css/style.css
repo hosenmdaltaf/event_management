@@ -3886,8 +3886,9 @@ footer h6 {
 	padding-bottom: 138px
 }
 
-.page-gallery .tab-nav {
+.page-gallery .tab-nav { 
 	margin-bottom: 50px;
+	margin-bottom: 0px;
 }
 
 .s-news {
