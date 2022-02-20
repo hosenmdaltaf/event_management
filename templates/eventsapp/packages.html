@@ -3,9 +3,6 @@
 
 {% block content %}
 
-
-
-
 <!--=================== PAGE-TITLE ===================-->
 <div class="page-title" style="background-image: url(../../static/img/package.jpg);">
     <div class="container">
@@ -21,15 +18,26 @@
 <!--================= PAGE-TITLE END =================-->
 
 <!--==================== S-GALLERY ====================--> 
-<section class="s-gallery page-gallery" style="background-image: url(../../static/img/package-background2.jpg);" >
-    <div class="container">
+<section class="s-gallery page-gallery"  >
+    <div class="container" >
         <div class="tab-wrap">
 
+            <ul class="tab-nav gallery-tabs">
+                <li class="item" rel="tab1"><a href="{% url 'eventsapp:packages' %}">
+                  All</a></li>
+       
+                {% for cat in categorys %}
+                <li class="item" rel="tab2">
+                    <a href="{% url 'eventsapp:packages' %}?category={{cat.name}}">
+                   {{ cat.name }}</a>
+                </li>
+
+                {% endfor %}
+          
+            </ul>
 
 
-
-
-         <div class="container">
+         {% comment %} <div class="container">
             <div class="tab-wrap">
             <ul class="tab-nav gallery-tabs">
                 <li class="item" rel="tab1"><a href="{% url 'eventsapp:packages' %}">
@@ -42,17 +50,16 @@
                 </li>
 
                 {% endfor %}
-                <!-- <li class="item" rel="tab3">Type 2</li> -->
-            </ul>
-
+          
+            </ul> {% endcomment %}
 
 
 	<!--================ S-OUR-COURSES END ================--> 
 
 
     	<!--================== EVENT BLOCK ==================-->
-	<section class="s-event-block"  >
-		<div class="container-fluid">
+	<section class="s-event-block" style="background-image: url(../../static/img/package-background2.jpg);"  >
+		<div class="container">
 			<div class="row">
                 {% for pacakge in price_pacakges %}
 				<div class="col-12 col-md-4 event-item-cover">
@@ -65,7 +72,6 @@
 						<p>{{pacakge.details|safe}}.</p>
 <!-- 					
 						<ul class="schedule-cover"> 
-
 							<li class="schedule-title">{{pacakge.details|safe}}</li>
 				
 						</ul> -->
@@ -84,8 +90,8 @@
 	</section>
 	<!--================ EVENT BLOCK END ================-->
 
-</div>
-</div>
+{% comment %} </div>
+</div> {% endcomment %}
 </section> 
 
 
@@ -98,8 +104,6 @@
         <h2 class="title-line">Pricing Plans</h2>
         <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
         <div class="pricing-cover">
-
-
 			<div class="row">
                 {% for pacakge in price_pacakges %}
 				<div class="col-12 col-md-4 event-item-cover">
@@ -122,15 +126,11 @@
 		</div>
             {% endfor %}
 		</div>
-
         </div>
     </div>
 </section> -->
 <!--================== S-PRICING END ==================-->
 
-
-
-{% include 'global/footer.html' %}
 
 
 {% endblock %}
