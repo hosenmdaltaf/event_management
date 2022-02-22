@@ -72,44 +72,61 @@
     </div>
 </section>
 
-{% comment %} 
-
-<script>
-    $('.gallery-tabs').on('click', '.btn', function(){
-        $('.gallery-tabs .btn').removeClass('item');
-        $(this).addClass('item');
-    });
-
-</script> {% endcomment %}
-
-
-{% comment %} <div class="infinite-container">
-    {% for number in gallerys %}
-      <div class="infinite-item">{{ number }}</div>
-    {% endfor %}
-  </div>
-
-  {% if gallerys.has_next %}
-    <a class="infinite-more-link" href="?page={{ gallerys.next_page_number }}">More</a>
-  {% endif %}
-
-  <div class="loading" style="display: none;">
-    Loading...
-  </div>
-
-  <script>
-    var infinite = new Waypoint.Infinite({
-      element: $('.infinite-container')[0],
-      onBeforePageLoad: function () {
-        $('.loading').show();
-      },
-      onAfterPageLoad: function ($items) {
-        $('.loading').hide();
-      }
-    });
-  </script> {% endcomment %}
 
 <!--================== S-GALLERY END ==================-->
+<section class="s-gallery page-gallery">
+    <div class="container"> 
 
+         <!--Pagination-->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+        {% if  gallerys.has_previous %}
+            <li class="page-item">
+            <a class="page-link" href="?page={{  gallerys.previous_page_number }}">Previous</a>
+          </li>
+        {% else %}
+            <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+          </li>
+        {% endif %}
+
+        {% if  gallerys.number|add:'-4' > 1 %}
+            <li class="page-item"><a class="page-link" href="?page={{  gallerys.number|add:'-5' }}">&hellip;</a></li>
+        {% endif %}
+
+        {% for i in  gallerys.paginator.page_range %}
+            {% if  gallerys.number == i %}
+                <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            {% elif i >  gallerys.number|add:'-5' and i <  gallerys.number|add:'5' %}
+                 <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if  gallerys.paginator.num_pages >  gallerys.number|add:'4' %}
+           <li class="page-item"><a class="page-link" href="?page={{  gallerys.number|add:'5' }}">&hellip;</a></li>
+        {% endif %}
+
+        {% if  gallerys.has_next %}
+            <li class="page-item">
+            <a class="page-link" href="?page={{  gallerys.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+            <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <!--end of Pagination-->
+
+
+    </div>
+</section>
 
 {% endblock %}
+
