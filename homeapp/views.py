@@ -66,5 +66,21 @@ def about(request):
      return render(request,'homeapp/about.html',{'reviews':reviews,'teams':teams,'gallerys':gallerys})
 
 
+def gallery(request):
+    category = request.GET.get('category')
+    if category == None:
+         gallerys = Gallery.objects.select_related('categorys').all()
+         paginator = Paginator(gallerys, 9)
+         page_number = request.GET.get('page')
+         page_obj = paginator.get_page(page_number)
+    else:
+         gallerys = Gallery.objects.filter(categorys__name=category)
+         paginator = Paginator(gallerys, 6)
+         page_number = request.GET.get('page')
+         page_obj = paginator.get_page(page_number)
+    categories = Category.objects.all() 
+    return render(request,'homeapp/gallery.html',{'gallerys':page_obj,'categories':categories})
+
+
 
 
