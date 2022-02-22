@@ -255,9 +255,15 @@
 	 *-------------------------- TABS -------------------------
 	*/
 	if( $( '.tab-wrap' )[0] ){
-		$( '.tab-wrap' )
-		.on( 'click', '.tab-nav .item', switchTab )
-		.find( '.tab-nav .item:first-child' ).trigger( 'click' );
+		var UrlSearch = new URLSearchParams(window.location.search),
+			activeTab = UrlSearch.get("category") || "all";
+
+		$( '.tab-wrap' ).on( 'click', '.tab-nav .item', switchTab );
+		$("[data-rel="+ activeTab +"]").trigger("click");
+
+		//alert(activeTab)
+
+		// $('.').find( '.tab-nav .item:first-child' ).trigger( 'click' )
 
 		function switchTab( event ){
 			var curentTab = $( this ),
@@ -274,6 +280,7 @@
 			contentHeight = visibleContent.height();
 			$( '.tabs-content', tabWrapper ).height( contentHeight );
 		}
+
 
 		$( window ).on( 'resize.myTemplate' , resizeTab )
 

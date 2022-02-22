@@ -1573,12 +1573,15 @@ footer .soc-link li:not(:last-child) {
 }
 
 footer .soc-link li a {
-	color: #cbcbcb
+	color: #2ccfbb;
 }
 
 footer .soc-link li a:hover {
-	color: #2ccfbb
+	color: red;
 }
+
+
+
 
 .footer-text {
 	margin-bottom: 34px
@@ -1619,7 +1622,7 @@ footer h6 {
 	text-align: right;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
-	color: #c4c4c4;
+	color: #2ccfbb;
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -1774,7 +1777,8 @@ footer h6 {
 	}
 	.footer-contacts li i {
 		font-size: 18px;
-		line-height: 30px
+		line-height: 30px;
+		color: #2ccfbb;
 	}
 	.soc-link li a {
 		font-size: 18px
@@ -3886,9 +3890,8 @@ footer h6 {
 	padding-bottom: 138px
 }
 
-.page-gallery .tab-nav { 
-	margin-bottom: 50px;
-	margin-bottom: 0px;
+.page-gallery .tab-nav {
+	margin-bottom: 0
 }
 
 .s-news {
@@ -6771,7 +6774,7 @@ blockquote:before {
 		line-height: 38px;
 		background-color: #f6f6f6
 	}
-	.tab-nav .item.active,
+	.tab-nav .item:active,
 	.tab-nav .item:hover {
 		background-color: #2ccfbb;
 		color: #fff

@@ -23,11 +23,12 @@
         <div class="tab-wrap">
 
             <ul class="tab-nav gallery-tabs">
-                <li class="item" rel="tab1"><a href="{% url 'eventsapp:packages' %}">
+                <li class="item" rel="tab1" data-rel="all">
+                    <a href="{% url 'eventsapp:packages' %}">
                   All</a></li>
        
                 {% for cat in categorys %}
-                <li class="item" rel="tab2">
+                <li class="item" rel="tab2" data-rel="{{cat.name}}">
                     <a href="{% url 'eventsapp:packages' %}?category={{cat.name}}">
                    {{ cat.name }}</a>
                 </li>
