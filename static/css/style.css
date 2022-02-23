@@ -1270,6 +1270,7 @@ input[type="submit"],
 	color: #fff
 }
 
+
 .btn:before {
 	content: '';
 	position: absolute;

@@ -3,6 +3,11 @@
 
 {% block content %}
 
+<style>
+    .btn:hover {
+        color: #fff !important;
+    }
+</style>
 <!--=================== PAGE-TITLE ===================-->
 <div class="page-title" style="background-image: url(../../static/img/package.jpg);">
     <div class="container">
@@ -38,23 +43,6 @@
             </ul>
 
 
-         {% comment %} <div class="container">
-            <div class="tab-wrap">
-            <ul class="tab-nav gallery-tabs">
-                <li class="item" rel="tab1"><a href="{% url 'eventsapp:packages' %}">
-                    <button>All</button></a></li>
-       
-                {% for cat in categorys %}
-                <li class="item" rel="tab2">
-                    <a href="{% url 'eventsapp:packages' %}?category={{cat.name}}">
-                      <button>{{ cat.name }}</button>  </a>
-                </li>
-
-                {% endfor %}
-          
-            </ul> {% endcomment %}
-
-
 	<!--================ S-OUR-COURSES END ================--> 
 
 
@@ -63,7 +51,7 @@
 		<div class="container">
 			<div class="row">
                 {% for pacakge in price_pacakges %}
-				<div class="col-12 col-md-4 event-item-cover">
+				<div class="col-12 col-md-4 event-item-cover"> 
 					<div class="event-block-item">
 						<div class="pricing-header">
 							<h4 class="pricing-header">{{pacakge.name}}</h4>
@@ -77,9 +65,9 @@
 				
 						</ul> -->
 
-                        <div class="pacakge-btn">
+                    <div class="pacakge-btn">
                             <a href="{% url 'contactapp:contact' %}" class="btn">buy now</a>
-                        </div>
+                        </div> 
 					</div>
                 
 				</div>
@@ -94,43 +82,6 @@
 {% comment %} </div>
 </div> {% endcomment %}
 </section> 
-
-
-
-	
-	<!--===================== S-PRICING =====================-->
-<!-- <section class="s-pricing">
-    <span class="title-position title-position-right">pricing</span>
-    <div class="container">
-        <h2 class="title-line">Pricing Plans</h2>
-        <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        <div class="pricing-cover">
-			<div class="row">
-                {% for pacakge in price_pacakges %}
-				<div class="col-12 col-md-4 event-item-cover">
-	
-            <div class="pricing-item">
-                <h4 class="pricing-header">{{pacakge.name}}</h4>
-                <div class="pricing-item-content">
-                    <div class="price pricing-slogan title-line">Tk.{{pacakge.price}}</div>
-               
-                    <div class="pricing-info">
-                        <ul class="">
-                            <li>{{pacakge.details}}/li>
-            
-                        </ul>
-                    </div>
-                    <div class="pricing-slogan title-line">{{pacakge.condition}}</div>
-                    <a href="{% url 'contactapp:contact' %}" class="btn btn-yellow">Book Now</a>
-                </div>
-            </div>
-		</div>
-            {% endfor %}
-		</div>
-        </div>
-    </div>
-</section> -->
-<!--================== S-PRICING END ==================-->
 
 
 
