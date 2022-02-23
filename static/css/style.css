@@ -2108,8 +2108,8 @@ footer h6 {
 .s-event-block {
 	/* padding: 180px 0 180px; */
 	padding: 50px 0 50px;
-	background-position: center;
-	background-repeat: no-repeat
+	/* background-position: center;
+	background-repeat: no-repeat */
 }
 .event-item-cover {
     margin-top: 20px;

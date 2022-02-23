@@ -1,21 +1,25 @@
-from tkinter import Image
+
 from django.db import models
-from django.db.models.deletion import CASCADE
 from django.utils.html import mark_safe
 from django.conf import settings
 
-# from io import BytesIO
-from PIL import Image
-# from django.core.files import File
-# import os
+from homeapp.compress import compress
 
 class Slider(models.Model):
     image=models.ImageField(upload_to='slider_img', blank=True, null=True)
     header_txt=models.CharField(max_length=100, blank=True, null=True)
     long_txt=models.TextField(max_length=200, blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        # call the compress function
+        new_image = compress(self.image)
+        # set self.image to new_image
+        self.image = new_image
+        # save
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return self.header_txt
+        return str(self.header_txt)
 
     def image_tag(self):
         if self.image != '':
@@ -25,7 +29,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100,blank=True,null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 class Gallery(models.Model):
     image=models.ImageField(upload_to='gallery_img', blank=True, null=True)
@@ -33,13 +37,13 @@ class Gallery(models.Model):
     title=models.CharField( max_length=20, blank=True, null=True)
     text=models.CharField(max_length=50, blank=True, null=True)
 
-    # def save(self,*args,**kwargs):
-    #     super(Gallery,self).save(*args,**kwargs)
-    #     img = Image.open(self.image.path)
-    #     if img.height>300  or img.width>300:
-    #         output_size = (300,300)
-    #         img.thumbnail(output_size)
-    #         img.save(self.image.path)
+    def save(self, *args, **kwargs):
+        # call the compress function
+        new_image = compress(self.image)
+        # set self.image to new_image
+        self.image = new_image
+        # save
+        super().save(*args, **kwargs)
    
 
     def __str__(self):
